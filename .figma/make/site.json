@@ -1,0 +1,11 @@
+{
+  "title": "Shayal Sammil",
+  "description": "Portfolio of Shayal Sammil, Information Technology student at Temasek Polytechnic: goals, education, skills, projects, leadership and achievements.",
+  "robots": {
+    "index": true
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

@@ -1,0 +1,14 @@
+# Store images and other binary files directly in Git (no Git LFS).
+# The site's images are small (a few MB in total), so LFS isn't needed, and plain files
+# keep the GitHub Pages build simple.
+* text=auto
+
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.ico  binary
+*.pdf  binary
+*.woff  binary
+*.woff2 binary
