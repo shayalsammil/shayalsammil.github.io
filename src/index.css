@@ -25,7 +25,6 @@
   --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   --max-width: 1360px;
   --section-space: clamp(4.5rem, 8vw, 7rem);
-  scroll-behavior: smooth;
   scroll-padding-top: 88px;
 }
 

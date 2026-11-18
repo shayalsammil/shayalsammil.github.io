@@ -71,6 +71,7 @@ export type Project = {
   summary: string; // two or three sentences
   tools: string[];
   image: string;
+  imageSize: [number, number]; // pixel width and height, so the page reserves space before it loads
   imageAlt: string;
   link?: { label: string; url: string }; // optional, e.g. { label: "View code", url: "https://github.com/..." }
 };
@@ -84,6 +85,7 @@ export const projects: Project[] = [
       "A role-based login portal for three types of users, built on Node.js with JSON Web Tokens. I hardened it with two OWASP controls: multi-factor authentication through an authenticator app such as Microsoft Authenticator, and automatic session timeouts after inactivity.",
     tools: ["Node.js", "JWT", "MFA (TOTP)", "HTML", "CSS", "JavaScript"],
     image: "/images/projects/owasp-portal/registration.png",
+    imageSize: [1273, 667],
     imageAlt: "Secure Login Portal registration page with role selection",
   },
   {
@@ -94,6 +96,7 @@ export const projects: Project[] = [
       "A Flutter app that helps the campus community report and recover lost items. Groq AI writes the listing from a photo, users search and filter by category and time, and a $1 NETS QR payment boosts urgent items to the top for 7 days.",
     tools: ["Flutter", "Dart", "Firebase", "Riverpod", "Groq AI", "NETS QR"],
     image: "/images/projects/lost-and-found/screens.png",
+    imageSize: [1458, 721],
     imageAlt: "Four Lost & Found app screens: home feed, item details, create listing and NETS QR boost",
   },
   {
@@ -104,6 +107,7 @@ export const projects: Project[] = [
       "A serverless event booking platform on AWS where organisers publish events and attendees book tickets. Four Lambda microservices use MySQL and DynamoDB, with seat reservation and rollback to prevent overselling and EventBridge-driven email confirmations.",
     tools: ["AWS Lambda", "API Gateway", "Amazon Cognito", "Amazon RDS (MySQL)", "DynamoDB", "Next.js"],
     image: "/images/projects/eventflow/home.png",
+    imageSize: [2910, 1580],
     imageAlt: "EventFlow Discover Events page with category and date search",
   },
   {
@@ -114,6 +118,7 @@ export const projects: Project[] = [
       "A mobile app concept that brings every academic deadline into one urgency-sorted view, paired with daily wellness check-ins and support. I took it from research and personas to a tested Figma prototype, planned across three Agile sprints in Jira.",
     tools: ["Figma", "Jira", "Design Thinking", "Scrum", "User Testing"],
     image: "/images/projects/calmclarity/wireframes.png",
+    imageSize: [1730, 1014],
     imageAlt: "Four CalmClarity screens: deadline dashboard, add deadline, wellness check-in and support resources",
   },
   {
@@ -124,6 +129,7 @@ export const projects: Project[] = [
       "A Python simulation of lunch-hour queues at a campus food outlet, comparing one queue with two using Big-O analysis. I used the results to weigh linked lists and design the layout of a new outlet, CafeX, alongside Subway and Triplets.",
     tools: ["Python", "Jupyter Notebook", "Queues", "Linked Lists", "Big-O Analysis", "draw.io"],
     image: "/images/projects/food-outlet-queues/layout.png",
+    imageSize: [1440, 884],
     imageAlt: "Floor plan of Subway, Triplets and CafeX with queues, counters and seating areas",
   },
 ];
@@ -192,13 +198,24 @@ export const involvement: Involvement[] = [
 ];
 
 // Shown in the same alternating layout as Projects, with a photo of each certificate.
-export const achievements = [
+type Achievement = {
+  title: string;
+  detail: string;
+  stat: { value: string; label: string };
+  description: string;
+  image: string;
+  imageSize: [number, number];
+  imageAlt: string;
+};
+
+export const achievements: Achievement[] = [
   {
     title: "Edusave Certificate of Academic Achievement",
     detail: "AY 2025/2026",
     stat: { value: "Top 25%", label: "of students in my level and course" },
     description: "Awarded by the Ministry of Education for good academic performance and conduct.",
     image: "/images/awards/edusave-certificate.jpg",
+    imageSize: [1740, 2494],
     imageAlt: "Edusave Certificate of Academic Achievement 2026 presented to Shayal Sammil",
   },
   {
@@ -208,6 +225,7 @@ export const achievements = [
     description:
       "Recognised by Temasek Polytechnic's School of Informatics & IT for excellent academic performance and consistent effort.",
     image: "/images/awards/directors-list.jpg",
+    imageSize: [1206, 1705],
     imageAlt: "Temasek Polytechnic Director's List certificate for Academic Year 2025/2026",
   },
 ];

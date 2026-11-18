@@ -250,6 +250,7 @@ function FeatureRow({
   tags = [],
   link,
   image,
+  imageSize,
   imageAlt,
   flipped,
   portrait = false,
@@ -261,6 +262,7 @@ function FeatureRow({
   tags?: string[];
   link?: Project["link"];
   image: string;
+  imageSize: [number, number];
   imageAlt: string;
   flipped: boolean;
   portrait?: boolean;
@@ -300,7 +302,7 @@ function FeatureRow({
         )}
       </div>
       <figure className="feature-figure">
-        <img alt={imageAlt} loading="lazy" src={image} />
+        <img alt={imageAlt} height={imageSize[1]} src={image} width={imageSize[0]} />
       </figure>
     </article>
   );
@@ -411,6 +413,7 @@ function HomePage() {
                 body={project.summary}
                 flipped={index % 2 === 1}
                 image={project.image}
+                imageSize={project.imageSize}
                 imageAlt={project.imageAlt}
                 key={project.title}
                 link={project.link}
@@ -445,7 +448,6 @@ function HomePage() {
                   className="row-photo"
                   src={item.image}
                   alt={item.imageAlt}
-                  loading="lazy"
                   decoding="async"
                   style={{ objectPosition: item.imagePosition }}
                 />
@@ -465,6 +467,7 @@ function HomePage() {
               flipped={index % 2 === 1}
               image={item.image}
               imageAlt={item.imageAlt}
+              imageSize={item.imageSize}
               key={item.title}
               meta={item.detail}
               portrait
