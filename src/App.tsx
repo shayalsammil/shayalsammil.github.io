@@ -429,15 +429,29 @@ function HomePage() {
         tinted={projects.length > 0}
       >
         <div className="rows">
-          {involvement.map((group) => (
-            <article className="row reveal" key={group.period}>
-              <p className="row-meta">{group.period}</p>
-              <ul className="rule-list rule-list--tight">
-                {group.roles.map((role) => (
-                  <li key={role}>{role}</li>
-                ))}
-              </ul>
-              <span />
+          {involvement.map((item) => (
+            <article className={`row reveal${item.image ? " row--media" : ""}`} key={item.title}>
+              <p className="row-meta">{item.period}</p>
+              <div>
+                <h3>{item.title}</h3>
+                <ul className="role-points">
+                  {item.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              </div>
+              {item.image ? (
+                <img
+                  className="row-photo"
+                  src={item.image}
+                  alt={item.imageAlt}
+                  loading="lazy"
+                  decoding="async"
+                  style={{ objectPosition: item.imagePosition }}
+                />
+              ) : (
+                <span />
+              )}
             </article>
           ))}
         </div>

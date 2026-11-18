@@ -30,13 +30,13 @@ export const goals = {
 
 export const education = [
   {
-    period: "2025 to present",
+    period: "2025 – Present",
     title: "Diploma in Information Technology",
     school: "School of Informatics & IT, Temasek Polytechnic",
-    detail: "GPA 3.89 / 4.0",
+    detail: "GPA 3.89 / 4.00",
   },
   {
-    period: "2021 to 2024",
+    period: "2021 – 2024",
     title: "Singapore-Cambridge GCE Ordinary Level",
     school: "Changkat Changi Secondary School",
     detail: "",
@@ -46,10 +46,10 @@ export const education = [
 // Lesson: "Fundamental skills", a list of work-related competencies.
 export const technicalSkills = [
   { title: "Languages", items: ["JavaScript", "Python", "Dart", "HTML", "CSS"] },
-  { title: "Frameworks & platforms", items: ["Node.js", "Flutter", "AWS"] },
+  { title: "Frameworks & Platforms", items: ["Node.js", "Flutter", "AWS"] },
   { title: "Databases", items: ["MySQL", "MongoDB"] },
   { title: "Practices", items: ["Agile", "Scrum", "UI/UX design"] },
-  { title: "Data & analytics", items: ["Excel", "Power BI", "KNIME", "Jupyter Notebook"] },
+  { title: "Data & Analytics", items: ["Excel", "Power BI", "KNIME", "Jupyter Notebook"] },
   { title: "Tools", items: ["Figma", "draw.io", "Postman", "Jira", "Cisco Packet Tracer"] },
 ];
 
@@ -79,7 +79,7 @@ export const projects: Project[] = [
   {
     title: "Secure Login Portal",
     period: "AY 2026/2027",
-    role: "Full-stack developer",
+    role: "Full-Stack Developer",
     summary:
       "A role-based login portal for three types of users, built on Node.js with JSON Web Tokens. I hardened it with two OWASP controls: multi-factor authentication through an authenticator app such as Microsoft Authenticator, and automatic session timeouts after inactivity.",
     tools: ["Node.js", "JWT", "MFA (TOTP)", "HTML", "CSS", "JavaScript"],
@@ -89,7 +89,7 @@ export const projects: Project[] = [
   {
     title: "Lost & Found",
     period: "AY 2026/2027",
-    role: "Mobile app developer",
+    role: "Mobile App Developer",
     summary:
       "A Flutter app that helps the campus community report and recover lost items. Groq AI writes the listing from a photo, users search and filter by category and time, and a $1 NETS QR payment boosts urgent items to the top for 7 days.",
     tools: ["Flutter", "Dart", "Firebase", "Riverpod", "Groq AI", "NETS QR"],
@@ -99,7 +99,7 @@ export const projects: Project[] = [
   {
     title: "EventFlow",
     period: "AY 2026/2027",
-    role: "Cloud application developer",
+    role: "Cloud Application Developer",
     summary:
       "A serverless event booking platform on AWS where organisers publish events and attendees book tickets. Four Lambda microservices use MySQL and DynamoDB, with seat reservation and rollback to prevent overselling and EventBridge-driven email confirmations.",
     tools: ["AWS Lambda", "API Gateway", "Amazon Cognito", "Amazon RDS (MySQL)", "DynamoDB", "Next.js"],
@@ -109,7 +109,7 @@ export const projects: Project[] = [
   {
     title: "CalmClarity",
     period: "AY 2026/2027",
-    role: "Product designer and product owner",
+    role: "Product Designer and Product Owner",
     summary:
       "A mobile app concept that brings every academic deadline into one urgency-sorted view, paired with daily wellness check-ins and support. I took it from research and personas to a tested Figma prototype, planned across three Agile sprints in Jira.",
     tools: ["Figma", "Jira", "Design Thinking", "Scrum", "User Testing"],
@@ -119,7 +119,7 @@ export const projects: Project[] = [
   {
     title: "Food Outlet Queue Simulation",
     period: "AY 2025/2026",
-    role: "Developer and analyst",
+    role: "Developer and Analyst",
     summary:
       "A Python simulation of lunch-hour queues at a campus food outlet, comparing one queue with two using Big-O analysis. I used the results to weigh linked lists and design the layout of a new outlet, CafeX, alongside Subway and Triplets.",
     tools: ["Python", "Jupyter Notebook", "Queues", "Linked Lists", "Big-O Analysis", "draw.io"],
@@ -129,26 +129,64 @@ export const projects: Project[] = [
 ];
 
 // Lesson: "Co-curricular activities" and "Community involvement".
-export const involvement = [
+type Involvement = {
+  period: string;
+  title: string;
+  points: string[];
+  image?: string;
+  imageAlt?: string;
+  imagePosition?: string;
+};
+
+export const involvement: Involvement[] = [
   {
-    period: "AY 2026/2027",
-    roles: [
-      "Quartermaster, Information Technology Student Interest Group",
-      "Class Representative (C25B03)",
-      "STAR Ambassador",
-      "Temasek LEAD",
-      "Sub-Committee Member, Informatics and IT Studies Club",
-      "Sub-Committee Member, Temasek Polytechnic Institute of Public Relations of Singapore Student Chapter",
+    period: "2026 – Present",
+    title: "Quartermaster, Information Technology Student Interest Group",
+    image: "/images/cca/quartermaster.jpg",
+    imageAlt: "Shayal guiding two club members working on laptops",
+    imagePosition: "50% 45%",
+    points: [
+      "Oversee the inventory, loan and return of club equipment for 10+ activities, keeping accurate records so that every item is accounted for",
+      "Coordinate with committee members before each event to confirm resource needs and prepare equipment on time, ensuring activities run smoothly",
     ],
   },
-  { period: "AY 2025/2026", roles: ["Temasek LEAD"] },
   {
-    period: "Secondary school",
-    roles: [
-      "Staff Sergeant | Flight Sergeant, National Cadet Corps (Air)",
-      "Upper Secondary CCA Executive Committee",
-      "Peer Support Leader, Student Leadership Committee",
-      "Touch Rugby School Team",
+    period: "2026 – Present",
+    title: "Class Representative (C25B03)",
+    points: [
+      "Act as the main point of contact between classmates and lecturers, relaying announcements, deadlines and class feedback to keep everyone informed",
+    ],
+  },
+  {
+    period: "2026 – Present",
+    title: "Member, Temasek LEAD",
+    image: "/images/cca/obs.jpg",
+    imageAlt: "Participants in harnesses and helmets at the climbing wall during the OBS camp",
+    imagePosition: "50% 72%",
+    points: [
+      "Strengthen teamwork and leadership skills by collaborating with peers to plan and complete group challenges at the OBS 2D1N Camp",
+      "Build empathy and communication skills by volunteering at the Vanguard Care Home (Tampines), engaging with elderly residents",
+    ],
+  },
+  {
+    period: "2026 – Present",
+    title: "Sub-Committee Member, Informatics and IT Studies Club",
+    image: "/images/cca/orientation.jpg",
+    imageAlt: "Freshmen seated in a lecture theatre during Freshman Orientation 2026",
+    points: [
+      "Guided a group of 24 freshmen as an Orientation Group Leader at Freshman Orientation 2026, helping the incoming AY 2026/2027 batch settle into campus life",
+      "Worked with fellow Orientation Leaders to run orientation activities, managing schedules and group logistics on the day",
+    ],
+  },
+  {
+    period: "2021 – 2024",
+    title: "Staff Sergeant | Flight Sergeant, National Cadet Corps Singapore (Air)",
+    image: "/images/cca/ncc.jpg",
+    imageAlt: "Shayal standing with fellow cadets in uniform at a parade",
+    imagePosition: "65% 40%",
+    points: [
+      "Managed unit operations as Flight Sergeant and commanded parades as Parade Commander, demonstrating leadership, discipline and accountability",
+      "Mentored junior cadets and cadet leaders through regular training and drills, helping the unit achieve distinction in 2023 and 2024",
     ],
   },
 ];
