@@ -465,7 +465,7 @@
   border-radius: var(--radius-md);
   display: block;
   object-fit: cover;
-  width: clamp(200px, 20vw, 280px);
+  width: clamp(300px, 34vw, 480px);
 }
 
 /* Skills */
@@ -885,7 +885,7 @@
 
   .row--media .row-photo {
     grid-column: 2;
-    max-width: 420px;
+    max-width: 600px;
     width: 100%;
   }
 
